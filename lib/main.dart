@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:eosdart/eosdart.dart';
+import 'package:json_viewer/json_viewer.dart';
+import 'dart:convert';
 
 void main() => runApp(MyApp());
 
@@ -8,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter EosDart Demo',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.lime,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter EOSDart Demo'),
     );
   }
 }
@@ -130,11 +132,11 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             Flexible(
-              child: Text('${_account?.toJson()}'),
+              child: JsonViewerRoot(jsonObj:_account?.toJson()),
             ),
-            Flexible(
-              child: Text('${_errorMessage}'),
-            ),
+            // Flexible(
+            //   child: Text('${_errorMessage}'),
+            // ),
           ],
         ),
       ),
