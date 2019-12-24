@@ -22,3 +22,11 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our 
 [online documentation](https://flutter.io/docs), which offers tutorials, 
 samples, guidance on mobile development, and a full API reference.
+
+
+### Web
+https://flutter.dev/docs/get-started/web
+
+ flutter channel beta
+ flutter upgrade
+ flutter config --enable-web

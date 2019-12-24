@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:eosdart/eosdart.dart';
 import 'package:json_viewer/json_viewer.dart';
-import 'dart:convert';
+// import 'dart:convert';
 
 void main() => runApp(MyApp());
 
@@ -61,6 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _account = null;
       _errorMessage = '';
     });
+
     _eosClient.getAccount(myController.text).then((Account account) {
       setState(() {
         _account = account;
@@ -131,12 +132,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
-            Flexible(
-              child: JsonViewerRoot(jsonObj:_account?.toJson()),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Expanded(
+                  child: JsonViewerRoot(jsonObj:_account?.toJson()),
+                )
+              ],
+
             ),
-            // Flexible(
-            //   child: Text('${_errorMessage}'),
-            // ),
+            Flexible(
+              child: Text('${_errorMessage}'),
+            ),
           ],
         ),
       ),
