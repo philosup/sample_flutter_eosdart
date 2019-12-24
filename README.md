@@ -27,6 +27,6 @@ samples, guidance on mobile development, and a full API reference.
 ### Web
 https://flutter.dev/docs/get-started/web
 
- flutter channel beta
- flutter upgrade
- flutter config --enable-web
+ - flutter channel beta
+ - flutter upgrade
+ - flutter config --enable-web
